@@ -1,5 +1,8 @@
+from cidade import Cidade
+
+
 class Pessoa:
-    def __init__(self, name, fone, city):
+    def __init__(self, name=None, fone=None, city=Cidade(None, None)):
         self.id = None
         self.nome = name
         self.fone = fone
