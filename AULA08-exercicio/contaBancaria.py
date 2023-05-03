@@ -1,17 +1,20 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 
 
-class ctaBancaria(ABC):
-    def __init__(self, agencia=1111, nome="Centro", saldo=0.00):
-        self.agencia = agencia
-        self.nome = nome
-        self.saldo = saldo
+class contaBancaria(ABC):
+    # Classe abstrata que representa uma conta bancária
 
-    def imprimir(self):
-        print("Agencia: "+str(self.agencia))
-        print("Nome: "+str(self.nome))
-        print("Saldo: "+str(self.saldo))
+    def __init__(self, titular, saldo):
+        # Construtor da classe abstrata
+        self.titular = titular  # Nome do titular da conta
+        self.saldo = saldo  # Saldo da conta em reais
 
-    @abstractclassmethod
-    def imprimirEspecifico(self):
+    @abstractmethod
+    def cadastrar(self):
+        # Método abstrato que deve ser implementado pelas subclasses
+        pass
+
+    @abstractmethod
+    def depositar(self, valor):
+        # Método abstrato que deve ser implementado pelas subclasses
         pass
